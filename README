@@ -1,0 +1,7 @@
+ROAMR stands for Remotely Operated Autonomous Monitoring Robot. It is based on a simple Arduino powered, caterpillar-tracked platform. An Android Phone is mounted on the robot, and provides information such as GPS location or orientation, and responds to TTS, vibration and picture requests, and will also provide a webcam feed. 
+
+XBee chips are used for communication with the Arduino, while the Android device communicates via TCP/IP using ROS (Robot Operating System). For this, SL4A (http://code.google.com/p/android-scripting/), Python for Android and ROS for Android (http://www.ros.org/wiki/android) need to be installed on the phone. Of course, Ros also needs to be installed on the controlling PC (http://ros.org/).
+
+The code for this project therefore of three parts: The Arduino sketch, which simply reads and interprets movement commands sent via the XBee chip, this code can be found in the "Arduino" folder and simply needs to be loaded onto the Arduino (I use an Arduino Uno); the Android code, which is just one Python script that handles requests and provides information to the PC, this is in the "Android" folder; and the PC side code, which is a ROS package called androidcontrol that handles manual control over the robot, autonomous functions such as rotating the robot to a certain azimuth, and sending requests to the Android device. The ROS package can of course be found in the "PC" folder.
+
+Not all of the described funtionality is added yet, this project is still in its early days, but I hope to make good progress over the coming weeks.
